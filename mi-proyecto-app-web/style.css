@@ -1,0 +1,168 @@
+:root {
+    --bg-dark:#121212;
+    --bg-card:#1e1e1e;
+    --accent:#e5ff00;
+    --text-ligth:#ffffff;
+    --text-gray:#a0a0a0;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: var(--bg-dark);
+    color:var(--text-ligth);
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: rgba(18,18,18,0.95);
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: table;
+}
+
+.logo{
+    float:left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:var(--accent);
+}
+nav{
+    float: right;
+}
+
+nav a, nav button{
+    color: var(--text-ligth);
+    text-decoration: none;
+    margin-left: 20px;
+    background:none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#btn-login-nav{
+    background-color: var(--accent);
+    color: black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000') no-repeat center center/cover;
+    height: 70vh;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100vw;
+    padding-top: 100px;
+}
+
+.hero h1{
+    font-size: 3.5rem;
+    color: var(--text-ligth);
+    margin-bottom: 10px;
+}
+
+.btn-primary{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: var(--accent);
+    color:black;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.precios-section{
+    padding: 60px 5%;
+    text-align: center;
+}
+.precios-section h2{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color:var(--accent);
+}
+
+.planes-container{
+    text-align: center;
+}
+
+.plan-card{
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 30px;
+    display: inline-block;
+    width: 300px;
+    margin:15px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.plan-card.destacado {
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.plan-card h3{margin-bottom: 15px;}
+.precio{font-size: 2rem; color:var(--accent); margin-bottom: 20px;}
+.plan-card ul{list-style: none; margin-bottom: 20px; color: var(--text-gray);}
+.plan-card li {margin-bottom: 20px;}
+.btn-plan{
+    width: 100%;
+    padding:10px;
+    background-color: transparent;
+    border: 2px solid var(--text-ligth);
+    color:var(--text-ligth);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.destacado .btn-plan {
+    background-color: var(--accent);
+    color: black;
+    border: none;
+}
+.modal {
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+    background-color: var(--bg-card);
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.hidden { display: none !important; }
+
+form label { display: block; margin-top: 15px; margin-bottom: 5px; color: var(--text-gray); }
+form input { width: 100%; padding: 10px; background-color: #333; border: none; color: white; border-radius: 5px; }
+.btn-submit { width: 100%; margin-top: 25px; padding: 12px; background-color: var(--accent); border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+
+
+
+footer { background-color: #0a0a0a; padding: 40px 5%; text-align: center; color: var(--text-gray); }
