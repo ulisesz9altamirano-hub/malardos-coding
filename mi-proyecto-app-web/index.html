@@ -1,85 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">  
+<html lang="es">
 <head>
-    <meta charset=""UFT-80"
-    <meta name="viewport" content="whidt=device-whidt, initial-scale=1.0">
-    <title>Barrancas fitness gym </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALARDOS CODING CLUB | Dev Studio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-
+<body> 
     <header>
-        <div class="logo=" BARRANCAS GYM </div>
+        <div class="header-brand">
+            <h1>MALARDOS CODING CLUB</h1>
+        </div>
+        
         <nav>
-            <a href="#contacto">Contacto</a>
-            <a href="#precios">Precios</a>
-            <button id="btn-login-nav" onclick="mostrarModal()">Iniciar Sesión </button>
-            <span id="user-badge"class="hidden">¡Hola! ¡SEA USTED BIENVENIDO A NUESTRO SISTEMA WEB!</span>
+            <a href="#comunidad"><i class="fa-solid fa-terminal"></i><span>Comunidad</span></a>
+            <a href="#proyectos"><i class="fa-solid fa-folder-open"></i><span>Proyectos</span></a>
+            <button id="btn-unirse" onclick="abrirModalUnirse()">
+                <i class="fa-solid fa-user-plus"></i> Unirme
+            </button>
         </nav>
     </header>
-    
-</body>
-</html>
-<section calss="hero">
-    <div calss="hero-content">
-        <h1>¡ENTRENA SIN EXCUSAS!</h1>
-        <P>El unico entrenamiento es el que no ocurrió. Sumate hoy mismo</P>
-        <a href="#precios" class="btn-primary">Ver Planes</a>
-        </div>
-</section>
 
-<section id="precios" class="precios-section">
-    <h2>Nuestros Planes</h2>
-    <div class="planes-container">
-        <div calss="plan-card">
-            <h3>Pase diario</h3>
-            <p class="percio"12.500 <span>12.500 Los 3 dias</span></p>
-            <ul>
-                <li> Ascceso a la sala de musculacion</li>
-                <li>Uso de vestuarios y duchas</li>
-            </ul>
-            <button class="btn-plan">Elegir un Plan</button>
-        </div>
-        <div class="Plan-card destacado">
-            <h3>Mensual Pase Libre</h3>
-            <p class="precio">25.000 <span>/ mes</span></p>
-            <ul>
-                <li>Musculacion y cardio libre</li>
-                <li>Todas la clases libres (crossfit, boxeo, funcional)</li>
-                <li>Rutina personalizada por profes</li>
-            </ul>
-            <button class="btn-plan">Elegir plan</button>
-        </div>
-    </div>
-</section>
+    <section id="banner">
+        <a href="https://ibb.co/PB4Xm5f">
+            <img src="https://i.ibb.co/bpLwWr8/decc7170-1d04-478c-b395-71043b2a2fb0.png" alt="Banner Malardos">
+        </a>
+        <div class="banner-overlay"></div>
+    </section>
 
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">Malardos.corp</span> 
+                </div>
+                <div class="terminal-body">
+                    <h1><span class="prompt">//</span>CODEA SIN MIEDO AL EXITO REY</h1> 
+                    <p class="console-text"> 
+                        <span class="comment">/* Ahora un poema motivacional */</span>
+                        "Vos tenes que codear porque los de atras vienen codeando loco..." Fran Esquivel.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-<footer id="contacto">
-    <div class="footer-info">
-        <h3>Ubicacion y Horarios</h3>
-        <p>Av.principal 1234, Mendoza, Barrancas, Maipu, Argentina</p>
-        <p>Lunes a viernes: 06:00 a 22:00 hs</p>
-        <p>Sabados: 08:00 a 14:00 hs</p>
-    </div>
-</footer>
+        <section id="comunidad" class="comunidad-section">
+            <h2 class="seccion-titulo">Nuestras Especialidades</h2>
+            
+            <div class="comunidad-grid">
+                
+                <div class="comunidad-card">
+                    <div class="card-icon-box python-color">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Python Devs</h3>
+                    <p>Lógica pura, algoritmos, manipulación de listas y estructuras de datos desde cero.</p>
+                </div>
 
+                <div class="comunidad-card">
+                    <div class="card-icon-box database-color">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3>Bases de Datos</h3>
+                    <p>Dominio de SQL, modelado relacional, armado de tablas y consultas complejas (JOINs, GROUP BY).</p>
+                </div>
 
-<div id="login-modal" class="modal-hidden">
-    <div calss="modal-content">
-        <span class="close-btn" onclick="cerrarcodal()">&times;</span>
-        <h2>Iniciar Sesion</h2>
-        <from id="login-form" onsubmit="procesarLogin(event)">
-            <label for="email">Correo Electronico</label>
-            <input type="email" id="email" required placeholder="tuuuusuario@gmai.com">
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" required placeholder="**********">
-            <button type="submit" class="btn-submit">Ingresar al Gym</button>
-        </from>
-    </div>
-</div>
+                <div class="comunidad-card">
+                    <div class="card-icon-box automation-color">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Automatización</h3>
+                    <p>Desarrollo de scripts, control de flujos con bucles y optimización de tareas repetitivas.</p>
+                </div>
 
-<script src="app.js"></script>
-</body>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body> 
 </html>
