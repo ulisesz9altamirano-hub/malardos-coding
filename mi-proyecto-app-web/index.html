@@ -17,13 +17,29 @@
             <h1>MALARDOS CODING CLUB</h1>
         </div>
         
-        <nav>
-            <a href="#comunidad"><i class="fa-solid fa-terminal"></i><span>Comunidad</span></a>
-            <a href="#proyectos"><i class="fa-solid fa-folder-open"></i><span>Proyectos</span></a>
-            <button id="btn-unirse" onclick="abrirModalUnirse()">
-                <i class="fa-solid fa-user-plus"></i> Unirme
-            </button>
+        <nav aria-label="Navegacion principal">
+            <ul>
+                <li>
+                    <a href="#comunidad">
+                        <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+                        <span>Comunidad</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#proyectos">
+                        <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+                        <span>Proyectos</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="btn-unirse" onclick="abrirModalUnirse()">
+                        <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                        <span>Unirme</span>
+                    </button>
+                </li>
+            </ul>
         </nav>
+        
     </header>
 
     <section id="banner">
@@ -51,38 +67,92 @@
                 </div>
             </div>
         </section>
+        
+        <section id="proyectos" class="proyectos-section" aria-labelledby="proyectos-titulo">
+    <h2 id="proyectos-titulo" class="seccion-titulo">Proyectos del Club</h2>
+    
+    <!-- Filtros de categorías -->
+    <nav class="proyectos-filtros" aria-label="Filtro de proyectos">
+        <button class="btn-filtro activo" data-categoria="todos">Todos</button>
+        <button class="btn-filtro" data-categoria="python">Python</button>
+        <button class="btn-filtro" data-categoria="sql">Bases de Datos</button>
+        <button class="btn-filtro" data-categoria="auto">Automatización</button>
+    </nav>
 
-        <section id="comunidad" class="comunidad-section">
-            <h2 class="seccion-titulo">Nuestras Especialidades</h2>
-            
-            <div class="comunidad-grid">
-                
-                <div class="comunidad-card">
-                    <div class="card-icon-box python-color">
-                        <i class="fa-brands fa-python"></i>
-                    </div>
-                    <h3>Python Devs</h3>
-                    <p>Lógica pura, algoritmos, manipulación de listas y estructuras de datos desde cero.</p>
-                </div>
-
-                <div class="comunidad-card">
-                    <div class="card-icon-box database-color">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3>Bases de Datos</h3>
-                    <p>Dominio de SQL, modelado relacional, armado de tablas y consultas complejas (JOINs, GROUP BY).</p>
-                </div>
-
-                <div class="comunidad-card">
-                    <div class="card-icon-box automation-color">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3>Automatización</h3>
-                    <p>Desarrollo de scripts, control de flujos con bucles y optimización de tareas repetitivas.</p>
-                </div>
-
+    <!-- Listado de Proyectos -->
+    <ul class="proyectos-grid" id="lista-proyectos">
+        
+        <!-- Proyecto 1: Python -->
+        <li class="proyecto-card" data-categoria="python">
+            <div class="proyecto-badge python-tag">Python</div>
+            <h3>Análisis de Notas 2026</h3>
+            <p>Sistema modular interactivo en Python para evaluar el rendimiento estudiantil, procesar promedios y generar reportes de control de flujos.</p>
+            <div class="proyecto-footer">
+                <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
+                <span class="proyecto-status"><i class="fa-solid fa-circle-check"></i> Terminado</span>
             </div>
-        </section>
+        </li>
+
+        <!-- Proyecto 2: SQL / Docker -->
+        <li class="proyecto-card" data-categoria="sql">
+            <div class="proyecto-badge sql-tag">SQL & Docker</div>
+            <h3>Infraestructura Local AI/DB</h3>
+            <p>Contenedores Docker para MySQL y PostgreSQL optimizados para consultas complejas, JOINS avanzados y persistencia de datos local.</p>
+            <div class="proyecto-footer">
+                <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
+                <span class="proyecto-status en-desarrollo"><i class="fa-solid fa-spinner"></i> En desarrollo</span>
+            </div>
+        </li>
+
+        <!-- Proyecto 3: Automatización / Salud -->
+        <li class="proyecto-card" data-categoria="auto">
+            <div class="proyecto-badge auto-tag">Automatización</div>
+            <h3>Asistente de Diagnóstico NANDA</h3>
+            <p>Script automatizado para agilizar la navegación de nomenclaturas médicas y tratamientos basados en síntomas para estudiantes de enfermería.</p>
+            <div class="proyecto-footer">
+                <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
+                <span class="proyecto-status"><i class="fa-solid fa-circle-check"></i> Terminado</span>
+            </div>
+        </li>
+
+    </ul>
+</section>
+
+        <section id="comunidad" class="comunidad-section" aria-labelledby="comunidad-titulo">
+    <!-- Le damos un id al título para mejorar la accesibilidad con aria-labelledby -->
+    <h2 id="comunidad-titulo" class="seccion-titulo">Nuestras Especialidades</h2>
+    
+    <!-- Cambiamos el div contenedor por una lista (ul), ya que semánticamente es un listado de especialidades -->
+    <ul class="comunidad-grid">
+        
+        <!-- Cada tarjeta ahora es un elemento de lista (li) con su estructura semántica -->
+        <li class="comunidad-card">
+            <!-- aria-hidden="true" en los iconos para que los lectores de pantalla no lean "fa-brands fa-python" -->
+            <div class="card-icon-box python-color" aria-hidden="true">
+                <i class="fa-brands fa-python"></i>
+            </div>
+            <h3>Python Devs</h3>
+            <p>Lógica pura, algoritmos, manipulación de listas y estructuras de datos desde cero.</p>
+        </li>
+
+        <li class="comunidad-card">
+            <div class="card-icon-box database-color" aria-hidden="true">
+                <i class="fa-solid fa-database"></i>
+            </div>
+            <h3>Bases de Datos</h3>
+            <p>Dominio de SQL, modelado relacional, armado de tablas y consultas complejas (JOINs, GROUP BY).</p>
+        </li>
+
+        <li class="comunidad-card">
+            <div class="card-icon-box automation-color" aria-hidden="true">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3>Automatización</h3>
+            <p>Desarrollo de scripts, control de flujos con bucles y optimización de tareas repetitivas.</p>
+        </li>
+
+    </ul>
+</section>
     </main>
 
     <script src="app.js"></script>
