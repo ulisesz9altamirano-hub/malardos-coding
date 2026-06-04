@@ -36,29 +36,59 @@ body {
     background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
 }
 
+/* Contenedor principal del Header */
 header {
-    background: rgba(5, 5, 8, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 2px solid rgba(0, 240, 255, 0.1);
-    padding: 1.2rem 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    background-color: #1a1a1a; /* Fondo oscuro estilo terminal */
+    color: #ffffff;
 }
 
-.header-brand h1 {
-    font-family: var(--font-code);
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+/* Estructura del Nav */
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem; /* Separación limpia entre elementos */
+    margin: 0;
+    padding: 0;
 }
+
+/* Estilos para los enlaces */
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre el icono y el texto */
+    color: #a0aec0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efecto Hover para los enlaces (¡Toque Matrix/Dev!) */
+nav a:hover {
+    color: #00ff66; /* Verde neón/terminal */
+}
+
+/* El botón "Unirme" para que resalte como Call to Action (CTA) */
+#btn-unirse {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #00ff66;
+    color: #000000;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
 
 .header-brand h1::after {
     content: ' .club';
@@ -70,27 +100,7 @@ header p {
     display: none;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-}
 
-nav a {
-    font-family: var(--font-code);
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-transform: uppercase;
-}
-
-nav a:hover {
-    color: var(--cyber-blue);
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
-}
 
 #btn-unirse {
     background: transparent;
@@ -207,6 +217,156 @@ main {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+.proyectoS.section{
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.seccion-titulo{
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom:2rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+.proyecyos-filtros{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+.btn-filtro{
+    background-color: #1a1a1a;
+    color: #a0aec0;
+    border: 1px solid #333333;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-filtro:hover,
+.btn-filtro.activo{
+    background-color: #00ff66;
+    color: #000000;
+    border-color: #00ff66;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+    transform: translateY(-2px);
+}
+.proyectcos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.proyecto-card{
+    background-color: #151515;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto-card:hover{
+    transform: translateY(-5px);
+    border-color: #404040;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.proyecto-badge{
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+.python-tag{
+    background-color: rgba(55, 118, 171, 0.15);
+    color: #4b8bbe;
+    border: 1px solid rgba(55, 118, 171, 0.3);
+}
+.sql-tag{
+    background-color: rgba(0, 247, 255, 0.1);
+    color: #00f7ff;
+    border: 1px solid rgba(0, 247, 255, 0.3);
+}
+
+.auto-tag{
+    background-color: rgba(255, 159, 67, 0.67);
+    color: #ff9f43;
+    border: 1px solid rgba(255, 159, 67, 0.3);
+}
+.proyecto-card h3{
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+.proyecto-card p{
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+.proyecto-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #262626;
+    padding-top: 1.2rem;
+    margin-top: auto;
+}
+.btn-repo{
+    color: #00ff66;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+}
+.btn-repo:hover{
+    color: #ffffff;
+}
+.proyecto-status{
+    color: #718096;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.proyecto-status .fa-circle-check{
+    color: #00ff66;
+}
+.proyecto-status.en-desarrollo{
+    color: #ff9f43;
+}
+.proyecto-status.en-desarrollo .fa-spinner{
+    animation: rotarSpinner 2s linear infinite;
+}
+@keyframes rotarSpinner{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 
 .comunidad-section {
@@ -346,16 +506,13 @@ main {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(3, 3, 5, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    padding: 1rem;
+    z-index: 9999; /* Asegura que tape todo lo demás */
 }
 
 .modal-content {
