@@ -1,37 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // ==========================================
-    // 1. INTERACTIVIDAD DE TARJETAS (COMUNIDAD)
-    // ==========================================
-    const cards = document.querySelectorAll('.comunidad-card');
-    
-    cards.forEach(card => {
-        card.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease';
-        
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-8px)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-    });
-
-    // ==========================================
-    // 2. FILTRADO DINÁMICO DE PROYECTOS
-    // ==========================================
     const botonesFiltro = document.querySelectorAll(".btn-filtro");
     const proyectos = document.querySelectorAll(".proyecto-card");
 
     botonesFiltro.forEach(boton => {
         boton.addEventListener("click", () => {
-            // Cambiar estado activo en los botones
             botonesFiltro.forEach(b => b.classList.remove("activo"));
             boton.classList.add("activo");
 
             const categoriaSeleccionada = boton.getAttribute("data-categoria");
 
-            // Filtrar las tarjetas de proyectos con transición
             proyectos.forEach(proyecto => {
                 const categoriaProyecto = proyecto.getAttribute("data-categoria");
 
@@ -39,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     proyecto.style.display = "flex";
                     setTimeout(() => {
                         proyecto.style.opacity = "1";
-                        proyecto.style.transform = "scale(1)";
+                        proyecto.style.transform = "translateY(0) scale(1)";
                     }, 50);
                 } else {
                     proyecto.style.opacity = "0";
-                    proyecto.style.transform = "scale(0.95)";
+                    proyecto.style.transform = "translateY(10px) scale(0.98)";
                     setTimeout(() => {
                         proyecto.style.display = "none";
                     }, 300);
@@ -51,22 +28,62 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    const tarjetasGlow = document.querySelectorAll('.proyecto-card, .comunidad-card, .hero-content');
+    tarjetasGlow.forEach(target => {
+        target.addEventListener('mousemove', (e) => {
+            const rect = target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            target.style.setProperty('--mouse-x', `${x}px`);
+            target.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    const secciones = document.querySelectorAll('.hero, #proyectos, #comunidad');
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const seccionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('seccion-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    secciones.forEach(seccion => {
+        seccion.classList.add('seccion-oculta');
+        seccionObserver.observe(seccion);
+    });
+
+    const tituloTerminal = document.querySelector('.terminal-body h1');
+    if (tituloTerminal) {
+        const textoSinPrompt = "CODEA SIN MIEDO AL EXITO REY";
+        tituloTerminal.innerHTML = '<span class="prompt">//</span> ';
+        let i = 0;
+        function escribirLetra() {
+            if (i < textoSinPrompt.length) {
+                tituloTerminal.innerHTML += textoSinPrompt.charAt(i);
+                i++;
+                setTimeout(escribirLetra, 50);
+            }
+        }
+        setTimeout(escribirLetra, 400);
+    }
 });
 
-// ==========================================
-// 3. FUNCIONES DEL MODAL "UNIRME"
-// ==========================================
-
 function abrirModalUnirse() {
-    // Si el modal ya está abierto, no hacemos nada para evitar duplicados
     if (document.getElementById('modal-unirse')) return;
 
-    // Crear el contenedor principal del modal (overlay)
     const modal = document.createElement('div');
     modal.id = 'modal-unirse';
     modal.className = 'modal-overlay';
 
-    // Inyectar la estructura HTML estilo terminal
     modal.innerHTML = `
         <div class="modal-content">
             <div class="terminal-header">
@@ -78,7 +95,6 @@ function abrirModalUnirse() {
             <div class="modal-body">
                 <h3><span class="prompt">></span> ÚNETE AL CLUB REY</h3>
                 <p class="modal-subtitle">Ingresá tus datos para empezar a codear sin miedo:</p>
-                
                 <form id="form-registro">
                     <div class="form-group">
                         <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
@@ -104,29 +120,21 @@ function abrirModalUnirse() {
         </div>
     `;
 
-    // Añadir el modal al cuerpo del documento
     document.body.appendChild(modal);
-
-    // Asignar el evento de cierre al botón rojo de la terminal
     document.getElementById('btn-cerrar-modal').addEventListener('click', cerrarModal);
     
-    // Cerrar si hacen clic fuera de la ventana de la terminal (en el fondo oscuro)
     modal.addEventListener('click', (e) => {
         if (e.target === modal) cerrarModal();
     });
 
-    // Escuchar la tecla Escape para cerrar
     document.addEventListener('keydown', escucharTeclado);
-
-    // Escuchar el envío del formulario
     document.getElementById('form-registro').addEventListener('submit', manejarRegistro);
 }
 
 function cerrarModal() {
     const modal = document.getElementById('modal-unirse');
     if (modal) {
-        modal.remove(); 
-        // Limpiamos el event listener global para no dejar basura en memoria
+        modal.remove();
         document.removeEventListener('keydown', escucharTeclado);
     }
 }
@@ -136,14 +144,11 @@ function escucharTeclado(e) {
 }
 
 function manejarRegistro(e) {
-    e.preventDefault(); 
-    
+    e.preventDefault();
     const nombre = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
     const stack = document.getElementById('stack').value;
 
-    // Mensaje de éxito al estilo Malardo
     alert(`¡Bienvenido al club, ${nombre}!\n\nTe registraste correctamente en el área de [${stack.toUpperCase()}].\nRevisá tu correo: ${email} para las instrucciones.`);
-    
     cerrarModal();
 }
