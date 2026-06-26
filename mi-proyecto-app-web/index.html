@@ -39,14 +39,17 @@
                 </li>
             </ul>
         </nav>
-        
     </header>
 
     <section id="banner">
-        <a href="https://ibb.co/PB4Xm5f">
-            <img src="https://i.ibb.co/bpLwWr8/decc7170-1d04-478c-b395-71043b2a2fb0.png" alt="Banner Malardos">
-        </a>
+        <img src="https://i.ibb.co/7NNg5bfJ/610368801-769715396132052-6187061676041452245-n.jpg" alt="Malardos Banner">
         <div class="banner-overlay"></div>
+        <div class="banner-badge-container">
+            <div class="banner-corporate-tag">
+                <span class="status-pulse"></span>
+                MALARDOS.CLUB // MAIN_CORE_ACTIVE
+            </div>
+        </div>
     </section>
 
     <main>
@@ -61,7 +64,6 @@
                 <div class="terminal-body">
                     <h1><span class="prompt">//</span>CODEA SIN MIEDO AL EXITO REY</h1> 
                     <p class="console-text"> 
-                        <span class="comment">/* Ahora un poema motivacional */</span>
                         "Vos tenes que codear porque los de atras vienen codeando loco..." Fran Esquivel.
                     </p>
                 </div>
@@ -69,90 +71,77 @@
         </section>
         
         <section id="proyectos" class="proyectos-section" aria-labelledby="proyectos-titulo">
-    <h2 id="proyectos-titulo" class="seccion-titulo">Proyectos del Club</h2>
-    
-    <!-- Filtros de categorías -->
-    <nav class="proyectos-filtros" aria-label="Filtro de proyectos">
-        <button class="btn-filtro activo" data-categoria="todos">Todos</button>
-        <button class="btn-filtro" data-categoria="python">Python</button>
-        <button class="btn-filtro" data-categoria="sql">Bases de Datos</button>
-        <button class="btn-filtro" data-categoria="auto">Automatización</button>
-    </nav>
+            <h2 id="proyectos-titulo" class="seccion-titulo">Proyectos del Club</h2>
+            
+            <nav class="proyectos-filtros" aria-label="Filtro de proyectos">
+                <button class="btn-filtro activo" data-categoria="todos">Todos</button>
+                <button class="btn-filtro" data-categoria="python">Python</button>
+                <button class="btn-filtro" data-categoria="sql">Bases de Datos</button>
+                <button class="btn-filtro" data-categoria="auto">Automatización</button>
+            </nav>
 
-    <!-- Listado de Proyectos -->
-    <ul class="proyectos-grid" id="lista-proyectos">
-        
-        <!-- Proyecto 1: Python -->
-        <li class="proyecto-card" data-categoria="python">
-            <div class="proyecto-badge python-tag">Python</div>
-            <h3>Análisis de Notas 2026</h3>
-            <p>Sistema modular interactivo en Python para evaluar el rendimiento estudiantil, procesar promedios y generar reportes de control de flujos.</p>
-            <div class="proyecto-footer">
-                <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
-                <span class="proyecto-status"><i class="fa-solid fa-circle-check"></i> Terminado</span>
-            </div>
-        </li>
+            <ul class="proyectos-grid" id="lista-proyectos">
+                <li class="proyecto-card" data-categoria="python">
+                    <div class="proyecto-badge python-tag">Python</div>
+                    <h3>Análisis de Notas 2026</h3>
+                    <p>Sistema modular interactivo en Python para evaluar el rendimiento estudiantil, procesar promedios y generar reportes de control de flujos.</p>
+                    <div class="proyecto-footer">
+                        <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
+                        <span class="proyecto-status"><i class="fa-solid fa-circle-check"></i> Terminado</span>
+                    </div>
+                </li>
 
-        <!-- Proyecto 2: SQL / Docker -->
-        <li class="proyecto-card" data-categoria="sql">
-            <div class="proyecto-badge sql-tag">SQL & Docker</div>
-            <h3>Infraestructura Local AI/DB</h3>
-            <p>Contenedores Docker para MySQL y PostgreSQL optimizados para consultas complejas, JOINS avanzados y persistencia de datos local.</p>
-            <div class="proyecto-footer">
-                <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
-                <span class="proyecto-status en-desarrollo"><i class="fa-solid fa-spinner"></i> En desarrollo</span>
-            </div>
-        </li>
+                <li class="proyecto-card" data-categoria="sql">
+                    <div class="proyecto-badge sql-tag">SQL & Docker</div>
+                    <h3>Infraestructura Local AI/DB</h3>
+                    <p>Contenedores Docker para MySQL y PostgreSQL optimizados para consultas complejas, JOINS avanzados y persistencia de datos local.</p>
+                    <div class="proyecto-footer">
+                        <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
+                        <span class="proyecto-status en-desarrollo"><i class="fa-solid fa-spinner"></i> En desarrollo</span>
+                    </div>
+                </li>
 
-        <!-- Proyecto 3: Automatización / Salud -->
-        <li class="proyecto-card" data-categoria="auto">
-            <div class="proyecto-badge auto-tag">Automatización</div>
-            <h3>Asistente de Diagnóstico NANDA</h3>
-            <p>Script automatizado para agilizar la navegación de nomenclaturas médicas y tratamientos basados en síntomas para estudiantes de enfermería.</p>
-            <div class="proyecto-footer">
-                <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
-                <span class="proyecto-status"><i class="fa-solid fa-circle-check"></i> Terminado</span>
-            </div>
-        </li>
-
-    </ul>
-</section>
+                <li class="proyecto-card" data-categoria="auto">
+                    <div class="proyecto-badge auto-tag">Automatización</div>
+                    <h3>Asistente de Diagnóstico NANDA</h3>
+                    <p>Script automatizado para agilizar la navegación de nomenclaturas médicas y tratamientos basados en síntomas para estudiantes de enfermería.</p>
+                    <div class="proyecto-footer">
+                        <a href="#" class="btn-repo"><i class="fa-brands fa-github"></i> Código</a>
+                        <span class="proyecto-status"><i class="fa-solid fa-circle-check"></i> Terminado</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
         <section id="comunidad" class="comunidad-section" aria-labelledby="comunidad-titulo">
-    <!-- Le damos un id al título para mejorar la accesibilidad con aria-labelledby -->
-    <h2 id="comunidad-titulo" class="seccion-titulo">Nuestras Especialidades</h2>
-    
-    <!-- Cambiamos el div contenedor por una lista (ul), ya que semánticamente es un listado de especialidades -->
-    <ul class="comunidad-grid">
-        
-        <!-- Cada tarjeta ahora es un elemento de lista (li) con su estructura semántica -->
-        <li class="comunidad-card">
-            <!-- aria-hidden="true" en los iconos para que los lectores de pantalla no lean "fa-brands fa-python" -->
-            <div class="card-icon-box python-color" aria-hidden="true">
-                <i class="fa-brands fa-python"></i>
-            </div>
-            <h3>Python Devs</h3>
-            <p>Lógica pura, algoritmos, manipulación de listas y estructuras de datos desde cero.</p>
-        </li>
+            <h2 id="comunidad-titulo" class="seccion-titulo">Nuestras Especialidades</h2>
+            
+            <ul class="comunidad-grid">
+                <li class="comunidad-card">
+                    <div class="card-icon-box python-color" aria-hidden="true">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Python Devs</h3>
+                    <p>Lógica pura, algoritmos, manipulación de listas y estructuras de datos desde cero.</p>
+                </li>
 
-        <li class="comunidad-card">
-            <div class="card-icon-box database-color" aria-hidden="true">
-                <i class="fa-solid fa-database"></i>
-            </div>
-            <h3>Bases de Datos</h3>
-            <p>Dominio de SQL, modelado relacional, armado de tablas y consultas complejas (JOINs, GROUP BY).</p>
-        </li>
+                <li class="comunidad-card">
+                    <div class="card-icon-box database-color" aria-hidden="true">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3>Bases de Datos</h3>
+                    <p>Dominio de SQL, modelado relacional, armado de tablas y consultas complejas (JOINs, GROUP BY).</p>
+                </li>
 
-        <li class="comunidad-card">
-            <div class="card-icon-box automation-color" aria-hidden="true">
-                <i class="fa-solid fa-robot"></i>
-            </div>
-            <h3>Automatización</h3>
-            <p>Desarrollo de scripts, control de flujos con bucles y optimización de tareas repetitivas.</p>
-        </li>
-
-    </ul>
-</section>
+                <li class="comunidad-card">
+                    <div class="card-icon-box automation-color" aria-hidden="true">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Automatización</h3>
+                    <p>Desarrollo de scripts, control de flujos con bucles y optimización de tareas repetitivas.</p>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <script src="app.js"></script>
